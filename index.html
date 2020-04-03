@@ -2,53 +2,60 @@
 <html>
     <head>
         <title>Anne's Resume</title>
-        <style>
-          body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-          }
-
-          .topnav {
-            overflow: hidden;
-            background-color: #333;
-          }
-
-          .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-          }
-
-          .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-          }
-
-          .topnav a.active {
-            background-color: #4CAF50;
-            color: white;
-          }
-          </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
-    <body>
+    <body style="margin: 0; font-family: Arial, Helvetica, sans-serif;">
+
       <header>
-        <div style="text-align: center; vertical-align: middle;">
-          <h2 style="font-family:Verdana; font-variant: small-caps">Mary Anne Bandong-Retulin</h1>
-          <h3 style="font-family:Verdana; font-variant: small-caps">Online Resume</h2>
-            <hr>
+        <div style="text-align: center; vertical-align: middle; padding-top: 5px">
+          <h2 style="font-family:Verdana; font-variant: small-caps">Mary Anne</h2>
         </div>
-        <nav>
-          <div class="topnav">
-            <a href="#home">Profile</a>
-            <a href="#news">Experiences</a>
-            <a href="#contact">Abilities</a>
-            <a href="#about">Contact</a>
-          </div>
+        <nav id="myDIV" class="navbar navbar-expand-sm bg-dark navbar-dark" >
+          <ul class="navbar-nav">
+            <li class="nav-item active" >
+              <a class="nav-link" onclick="GoToProfile()">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="GoToExperiences()">Experiences</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="GoToAbilities()">Abilities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="GoToContact()">Contact</a>
+            </li>
+          </ul>
         </nav>
-        <iframe id="myFrame" src="file:///C:/Users/Maan/Documents/project0/profile.html"></iframe>
       </header>
+      <section>
+        <iframe id="myFrame" src="profile.html" class="container-fluid" allowfullscreen style="padding-top: 0px; height:100%; width: 100%; position: absolute;; border-style: hidden;"></iframe>
+      </section>
+
+      <script>
+        function GoToProfile() {
+          document.getElementById("myFrame").src = "profile.html";
+          var element = document.getElementById("profileclass");
+        }
+        function GoToExperiences() {
+          document.getElementById("myFrame").src = "experiences.html";
+        }
+        function GoToAbilities() {
+          document.getElementById("myFrame").src = "abilities.html";
+        }
+        function GoToContact() {
+          document.getElementById("myFrame").src = "contact.html";
+        }
+        var header = document.getElementById("myDIV");
+        var btns = header.getElementsByClassName("nav-item");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function() {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+          });
+        }
+     </script>
+
     </body>
 </html>
