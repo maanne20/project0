@@ -1,0 +1,10 @@
+.experience { margin-bottom: 20px; }
+.experience p > strong { display: block; padding-top: 8px; margin-bottom: 10px; }
+.experience-details { display: block; margin-top: 6px; }
+.experience-details * { color: #22A39F; }
+.experience-details .seperator { color: #BCBCBC; }
+.experience-details > span { display: block; margin-bottom: 6px; }
+.experience-details .seperator { display: none; }
+.projects { font-size: 9pt; color: gray; padding-top: -10px; }
+.projects-title { font-size: 10pt; color: #22A39F; font-weight: bolder;}
+.hidden-phone { display: none; }
